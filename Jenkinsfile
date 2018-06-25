@@ -21,7 +21,7 @@ node {
      sh "export LC_ALL=en_US.UTF-8"
       sh "export LANG=en_US.UTF-8"   
     sh "fastlane init"   
-        sh "bundle exec fastlane scan"
+    //    sh "bundle exec fastlane scan"
         
  sh "bundle exec fastlane gym"
   sh "bundle exec fastlane beta"      
