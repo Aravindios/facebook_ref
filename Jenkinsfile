@@ -25,7 +25,7 @@ node {
   //    sh "export LANG=en_US.UTF-8" 
    //      sh "bundle install"
   //      sh "bundle exec fastlane store"
-   sh "fastlane init"   
+//   sh "fastlane init"   
   //   sh "bundle exec fastlane scan"
         
  sh "fastlane gym"
