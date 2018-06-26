@@ -17,7 +17,7 @@ env.GIT_BRANCH = env.BRANCH_NAME
             ]]
         ])
         sh 'fastlane init'    
-        sh 'fastlane beta' 
+        sh 'fastlane gym' 
 
     }
  }
