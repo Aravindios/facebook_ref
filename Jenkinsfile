@@ -31,7 +31,7 @@ node {
 // sh "fastlane gym"
    
         
- sh "sudo fastlane scan"      
+ sh "fastlane scan"      
 
     }
 }
