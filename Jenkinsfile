@@ -31,7 +31,7 @@ node {
 // sh "fastlane gym"
    
         
- sh "fastlane scan"      
+ sh 'fastlane scan'     
 
     }
 }
