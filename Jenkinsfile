@@ -29,6 +29,8 @@ node {
   //   sh "bundle exec fastlane scan"
   //       sh "bundle exec fastlane gym"
 // sh "fastlane gym"
+        sh "apple123"
+        
  sh "fastlane scan"      
 
     }
