@@ -17,7 +17,7 @@ node {
                 url: 'https://github.com/Aravindios/facebook_ref.git'
             ]]
         ])
-  //      sh"fastlane env"
+       sh"fastlane"
  //       sh "xcode-select --install"
  //      sh "gem install fastlane -NV"
 //     sh "brew cask install fastlane"
