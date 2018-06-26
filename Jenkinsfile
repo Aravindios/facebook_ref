@@ -20,16 +20,16 @@ node {
     //   sh"fastlane"
 //      sh "xcode-select --install"
   //    sh "gem install fastlane -NV"
-    sh "brew cask install fastlane"
+ //   sh "brew cask install fastlane"
  //    sh "export LC_ALL=en_US.UTF-8"
   //    sh "export LANG=en_US.UTF-8" 
-         sh "bundle install"
-        sh "bundle exec fastlane store"
+   //      sh "bundle install"
+  //      sh "bundle exec fastlane store"
    sh "fastlane init"   
-     sh "bundle exec fastlane scan"
+  //   sh "bundle exec fastlane scan"
         
-// sh "bundle exec fastlane gym"
-//  sh "bundle exec fastlane scan"      
+ sh "fastlane gym"
+ sh "fastlane scan"      
 
     }
 }
