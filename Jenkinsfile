@@ -16,8 +16,9 @@ env.GIT_BRANCH = env.BRANCH_NAME
                 url: 'https://github.com/Aravindios/facebook_ref.git'
             ]]
         ])
-        sh 'fastlane init'    
         sh 'sudo bundle update fastlane' 
+        sh 'fastlane init'    
+       
 
     }
  }
