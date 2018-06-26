@@ -16,7 +16,7 @@ env.GIT_BRANCH = env.BRANCH_NAME
                 url: 'https://github.com/Aravindios/facebook_ref.git'
             ]]
         ])
-        sh 'bundle update fastlane' 
+        sh 'gem install fastlane -NV' 
         sh 'fastlane init'    
        
 
