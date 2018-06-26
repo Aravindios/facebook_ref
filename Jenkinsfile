@@ -13,7 +13,7 @@ node {
         ])
 
         // Build and Test
-        sh 'xcodebuild -workspace MaterialDesign.xcworkspace -scheme "MaterialDesign" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=11.2" -enableCodeCoverage YES | /usr/local/bin/ocunit2junit' 
+        sh 'xcodebuild -workspace facebook_ref.xcworkspace -scheme "facebook_ref" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=11.2" -enableCodeCoverage YES | /usr/local/bin/ocunit2junit' 
 
         // Publish test results.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'test-reports/*.xml'])
