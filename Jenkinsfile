@@ -17,7 +17,7 @@ env.GIT_BRANCH = env.BRANCH_NAME
             ]]
         ])
         sh 'fastlane init'    
-        sh 'bundle install' 
+        sh 'bundle update fastlane' 
 
     }
  }
