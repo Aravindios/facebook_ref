@@ -18,9 +18,9 @@ node {
             ]]
         ])
     //   sh"fastlane"
-      sh "xcode-select --install"
+//      sh "xcode-select --install"
   //    sh "gem install fastlane -NV"
-  // sh "brew cask install fastlane"
+    sh "brew cask install fastlane"
  //    sh "export LC_ALL=en_US.UTF-8"
   //    sh "export LANG=en_US.UTF-8"   
    sh "fastlane init"   
