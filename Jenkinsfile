@@ -1,9 +1,4 @@
-   env.PATH = '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin'
-env.apple = '/Users/iosbuilds'
-env.USER = 'iosbuilds'
-// backwards compat with old branch variable
-env.GIT_BRANCH = env.BRANCH_NAME
- node {
+node {
     stage('Checkout/Build/Test') {
         // Checkout files.
         checkout([
@@ -12,14 +7,21 @@ env.GIT_BRANCH = env.BRANCH_NAME
             doGenerateSubmoduleConfigurations: false,
             extensions: [], submoduleCfg: [],
             userRemoteConfigs: [[
-                name: 'hannatest',
-                url: 'https://github.com/Aravindios/facebook_ref.git'
+                name: 'facebook_ref',
+                url: 'https://github.com/Aravindios/facebook_ref/'
             ]]
         ])
-     //   sh 'gem install fastlane -NV' 
-        sh 'fastlane init'    
-        sh 'fastlane beta' 
-       
 
-    }
- }
+        // Build and Test
+        sh 'xcodebuild -workspace MaterialDesign.xcworkspace -scheme "MaterialDesign" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=11.2" -enableCodeCoverage YES | /usr/local/bin/ocunit2junit' 
+
+        // Publish test results.
+        step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'test-reports/*.xml'])
+    }	
+
+	// Generate Code Coverage report
+	sh '/usr/local/bin/slather coverage --jenkins --html --scheme facebook_ref facebook_ref.xcodeproj/'
+	}
+
+	// Publish coverage results
+	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
