@@ -18,7 +18,7 @@ env.GIT_BRANCH = env.BRANCH_NAME
         ])
      //   sh 'gem install fastlane -NV' 
         sh 'fastlane init'    
-        sh 'fastlane env' 
+        sh 'fastlane beta' 
        
 
     }
