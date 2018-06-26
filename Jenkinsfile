@@ -27,8 +27,8 @@ node {
   //      sh "bundle exec fastlane store"
 //   sh "fastlane init"   
   //   sh "bundle exec fastlane scan"
-         sh "chmod 777 fastlane gym"
- sh "fastlane gym"
+  //       sh "bundle exec fastlane gym"
+// sh "fastlane gym"
  sh "fastlane scan"      
 
     }
