@@ -3,7 +3,20 @@ env.HOME = '/Users/iosbuilds'
 env.USER = 'iosbuilds'
 // backwards compat with old branch variable
 env.GIT_BRANCH = env.BRANCH_NAME
- 
+ node {
+    stage('Checkout/Build/Test') {
+        // Checkout files.
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: 'master']],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [], submoduleCfg: [],
+            userRemoteConfigs: [[
+                name: 'hannatest',
+                url: 'https://github.com/Aravindios/facebook_ref.git'
+            ]]
+        ])
  sh 'fastlane init'     
 
-
+    }
+ }
