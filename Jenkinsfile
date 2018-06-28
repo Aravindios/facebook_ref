@@ -8,7 +8,7 @@ node {
             extensions: [], submoduleCfg: [],
             userRemoteConfigs: [[
                 name: 'facebook_ref',
-                url: 'https://github.com/Aravindios/facebook_ref/'
+                url: 'https://github.com/Aravindios/facebook_ref'
             ]]
         ])
 
